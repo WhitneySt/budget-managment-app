@@ -1,16 +1,10 @@
-const URL_API = "http://localhost:3000/movimientos";
+import getMovimientos from "./services/getMovimientos.js";
+import printMovimientos from "./modules/printMovimientos.js";
+import { URL_API } from "./services/data.js";
 
-const getMovimientos = async () => {
-  try {
-    const { data } = await axios.get(URL_API);
-    return data;
-  } catch (error) {
-    console.log(error);
-    return [];
-  }
-};
+const tbody = document.getElementById("tablebody");
 
 document.addEventListener("DOMContentLoaded", async () => {
-  const movimientos = await getMovimientos();
-  console.log(movimientos);
+  const movimientos = await getMovimientos(URL_API);
+ printMovimientos(movimientos, tbody);
 });
