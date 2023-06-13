@@ -7,7 +7,7 @@ const printMovimientos = (movements, container) => {
             <td>${element.description}</td>
             <td>${element.price}</td>
             <td>${element.type}</td>
-            <td><span class="material-symbols-outlined">
+            <td><span class="material-symbols-outlined button--delete" data-id=${element.id}>
 close
 </span></td>
         </tr>
