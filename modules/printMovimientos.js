@@ -3,12 +3,18 @@ const printMovimientos = (movements, container) => {
   movements.forEach((element, index) => {
     container.innerHTML += `
         <tr>
-            <td>${element.id}</td>
+            <td>${index + 1}</td>
             <td>${element.description}</td>
             <td>${element.price}</td>
             <td>${element.type}</td>
-            <td><span class="material-symbols-outlined button--delete" data-id=${element.id}>
+            <td><span class="material-symbols-outlined button--delete" data-id=${
+              element.id
+            }>
 close
+</span><span class="material-symbols-outlined button--edit" data-id=${
+      element.id
+    }>
+edit
 </span></td>
         </tr>
         `;
